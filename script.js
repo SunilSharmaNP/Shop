@@ -1,24 +1,29 @@
-
 // ========== SIDEBAR NAVIGATION ==========
 const sidebarToggle = document.getElementById('sidebarToggle');
 const sidebar = document.getElementById('sidebar');
 const sidebarClose = document.getElementById('sidebarClose');
 const sidebarOverlay = document.getElementById('sidebarOverlay');
 
-sidebarToggle.addEventListener('click', () => {
-    sidebar.classList.add('active');
-    sidebarOverlay.classList.add('active');
-});
+if (sidebarToggle) {
+    sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.add('active');
+        sidebarOverlay.classList.add('active');
+    });
+}
 
-sidebarClose.addEventListener('click', () => {
-    sidebar.classList.remove('active');
-    sidebarOverlay.classList.remove('active');
-});
+if (sidebarClose) {
+    sidebarClose.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        sidebarOverlay.classList.remove('active');
+    });
+}
 
-sidebarOverlay.addEventListener('click', () => {
-    sidebar.classList.remove('active');
-    sidebarOverlay.classList.remove('active');
-});
+if (sidebarOverlay) {
+    sidebarOverlay.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        sidebarOverlay.classList.remove('active');
+    });
+}
 
 // Close sidebar when a link is clicked
 document.querySelectorAll('.sidebar-link').forEach(link => {
@@ -61,8 +66,11 @@ function prevSlide() {
     showSlide(currentSlide);
 }
 
-document.getElementById('nextBtn').addEventListener('click', nextSlide);
-document.getElementById('prevBtn').addEventListener('click', prevSlide);
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+
+if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+if (prevBtn) prevBtn.addEventListener('click', prevSlide);
 
 // Indicator click
 document.querySelectorAll('.indicator').forEach((indicator, index) => {
@@ -76,23 +84,32 @@ document.querySelectorAll('.indicator').forEach((indicator, index) => {
 setInterval(nextSlide, 5000);
 
 // ========== PRODUCT FILTERING ==========
-const tabButtons = document.querySelectorAll('.tab-btn');
-const productCards = document.querySelectorAll('.product-card');
+function filterProducts(category) {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const productCards = document.querySelectorAll('.product-card');
+    
+    tabButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-category') === category) {
+            btn.classList.add('active');
+        }
+    });
 
-tabButtons.forEach(button => {
+    productCards.forEach(card => {
+        if (card.getAttribute('data-category') === category) {
+            card.classList.remove('hidden');
+            card.style.animation = 'fadeInUp 0.5s ease';
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+}
+
+// Tab button click events
+document.querySelectorAll('.tab-btn').forEach(button => {
     button.addEventListener('click', () => {
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        
         const category = button.getAttribute('data-category');
-        productCards.forEach(card => {
-            if (card.getAttribute('data-category') === category) {
-                card.classList.remove('hidden');
-                card.style.animation = 'fadeInUp 0.5s ease';
-            } else {
-                card.classList.add('hidden');
-            }
-        });
+        filterProducts(category);
     });
 });
 
@@ -129,8 +146,7 @@ function submitInquiry(event) {
 function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const name = formData.get('name') || 'Customer';
-    const message = `New Inquiry from ${name}: Please check my inquiry.`;
+    const message = 'New Inquiry: Please check my inquiry.';
     const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     event.target.reset();
@@ -165,12 +181,14 @@ window.addEventListener('scroll', () => {
     }
 });
 
-backToTop.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+if (backToTop) {
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
-});
+}
 
 // ========== INTERSECTION OBSERVER FOR ANIMATIONS ==========
 const observerOptions = {
@@ -217,4 +235,9 @@ window.addEventListener('scroll', () => {
             link.classList.add('active');
         }
     });
+});
+
+// Initialize first product category
+window.addEventListener('load', () => {
+    filterProducts('cement');
 });
