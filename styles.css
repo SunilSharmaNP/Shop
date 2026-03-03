@@ -1,548 +1,961 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kishori Iron Store - Quality Hardware at Honest Prices. Building materials supplier in Dhanushadham offering cement, steel rods, sand, bricks, and construction materials.">
-    <meta name="keywords" content="hardware shop, building materials supplier, cement supplier, TMT rod supplier, sand supplier, Dhanushadham">
-    <meta name="author" content="Kishori Iron Store">
-    <title>Kishori Iron Store - Quality Hardware at Honest Prices</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-tools"></i>
-                <span>Kishori Iron Store</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About Us</a></li>
-                <li><a href="#products" class="nav-link">Products</a></li>
-                <li><a href="#warehouse" class="nav-link">Warehouse</a></li>
-                <li><a href="#why-choose" class="nav-link">Why Choose Us</a></li>
-                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                <li><a href="#contact" class="nav-link btn-contact">Contact Us</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Hero Banner -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Quality Hardware at Honest Prices</h1>
-            <p>Your trusted partner for all building materials and construction supplies</p>
-            <div class="hero-buttons">
-                <a href="#products" class="btn btn-primary">View Products</a>
-                <a href="#contact" class="btn btn-secondary">Contact Us</a>
-            </div>
-            <div class="hero-highlights">
-                <div class="highlight-item">
-                    <i class="fas fa-warehouse"></i>
-                    <span>Large Stock</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="fas fa-tag"></i>
-                    <span>Wholesale Rates</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="fas fa-truck"></i>
-                    <span>Fast Delivery</span>
-                </div>
-            </div>
-        </div>
-    </section>
+:root {
+    --primary-color: #1a3a52;
+    --secondary-color: #ff8c00;
+    --accent-color: #2c5282;
+    --light-grey: #f5f5f5;
+    --dark-grey: #333333;
+    --white: #ffffff;
+    --success: #27ae60;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
 
-    <!-- About Us Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Kishori Iron Store</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Your Trusted Building Materials Partner Since Years</h3>
-                    <p>Kishori Iron Store is a large, fully-stocked hardware and construction materials supplier serving contractors, builders, and homeowners across Dhanushadham and surrounding areas. With our vast warehouse facility, we ensure competitive prices and reliable supply for all your construction needs.</p>
-                    <div class="about-features">
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Large Warehouse Facility</h4>
-                                <p>Fully stocked with cement, steel, sand, bricks, and more</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Trusted by Local Builders</h4>
-                                <p>Preferred supplier for construction professionals</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Quality Guarantee</h4>
-                                <p>All products meet industry standards and specifications</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop" alt="Warehouse">
-                </div>
-            </div>
-        </div>
-    </section>
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-grey);
+    overflow-x: hidden;
+}
 
-    <!-- Products Section -->
-    <section id="products" class="products">
-        <div class="container">
-            <h2>Our Products</h2>
-            <p class="section-subtitle">Wide range of quality building materials at competitive prices</p>
-            
-            <!-- Product Categories -->
-            <div class="category-tabs">
-                <button class="tab-btn active" data-category="cement">Cement</button>
-                <button class="tab-btn" data-category="steel">Steel & Rod</button>
-                <button class="tab-btn" data-category="sand">Sand & Aggregates</button>
-                <button class="tab-btn" data-category="bricks">Bricks</button>
-                <button class="tab-btn" data-category="plumbing">Plumbing</button>
-                <button class="tab-btn" data-category="electrical">Electrical</button>
-                <button class="tab-btn" data-category="tools">Tools</button>
-            </div>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-            <!-- Products Grid -->
-            <div class="products-grid" id="productsGrid">
-                <!-- Cement Products -->
-                <div class="product-card" data-category="cement">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&h=300&fit=crop" alt="OPC Cement">
-                    </div>
-                    <h3>OPC Cement (50kg)</h3>
-                    <p class="product-description">Ordinary Portland Cement - High quality and durable</p>
-                    <div class="product-price">Rs. 450</div>
-                    <button class="btn btn-inquiry" onclick="inquire('OPC Cement')">Inquiry</button>
-                </div>
+/* Navigation */
+.navbar {
+    background: var(--primary-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
 
-                <div class="product-card" data-category="cement">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&h=300&fit=crop" alt="PPC Cement">
-                    </div>
-                    <h3>PPC Cement (50kg)</h3>
-                    <p class="product-description">Pozzolana Portland Cement - Best for durability</p>
-                    <div class="product-price">Rs. 480</div>
-                    <button class="btn btn-inquiry" onclick="inquire('PPC Cement')">Inquiry</button>
-                </div>
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-                <!-- Steel & Rod Products -->
-                <div class="product-card" data-category="steel">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1587534382346-6873bff299c8?w=300&h=300&fit=crop" alt="TMT Rod 8mm">
-                    </div>
-                    <h3>TMT Rod 8mm</h3>
-                    <p class="product-description">High strength thermomechanical treated steel rod</p>
-                    <div class="product-price">Rs. 680/kg</div>
-                    <button class="btn btn-inquiry" onclick="inquire('TMT Rod 8mm')">Inquiry</button>
-                </div>
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-                <div class="product-card" data-category="steel">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1587534382346-6873bff299c8?w=300&h=300&fit=crop" alt="TMT Rod 10mm">
-                    </div>
-                    <h3>TMT Rod 10mm</h3>
-                    <p class="product-description">Premium quality TMT reinforcement rod</p>
-                    <div class="product-price">Rs. 720/kg</div>
-                    <button class="btn btn-inquiry" onclick="inquire('TMT Rod 10mm')">Inquiry</button>
-                </div>
+.nav-logo i {
+    color: var(--secondary-color);
+    font-size: 2rem;
+}
 
-                <div class="product-card" data-category="steel">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1587534382346-6873bff299c8?w=300&h=300&fit=crop" alt="TMT Rod 12mm">
-                    </div>
-                    <h3>TMT Rod 12mm</h3>
-                    <p class="product-description">Strong and durable TMT reinforcement rod</p>
-                    <div class="product-price">Rs. 760/kg</div>
-                    <button class="btn btn-inquiry" onclick="inquire('TMT Rod 12mm')">Inquiry</button>
-                </div>
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
 
-                <!-- Sand & Aggregates -->
-                <div class="product-card" data-category="sand">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1580882631201-48d86c0b8cc9?w=300&h=300&fit=crop" alt="River Sand">
-                    </div>
-                    <h3>River Sand</h3>
-                    <p class="product-description">Clean and pure river sand for construction</p>
-                    <div class="product-price">Rs. 1200/ton</div>
-                    <button class="btn btn-inquiry" onclick="inquire('River Sand')">Inquiry</button>
-                </div>
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
 
-                <div class="product-card" data-category="sand">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1580882631201-48d86c0b8cc9?w=300&h=300&fit=crop" alt="Crush Sand">
-                    </div>
-                    <h3>Crush Sand (M-Sand)</h3>
-                    <p class="product-description">Manufactured sand for superior strength</p>
-                    <div class="product-price">Rs. 950/ton</div>
-                    <button class="btn btn-inquiry" onclick="inquire('Crush Sand')">Inquiry</button>
-                </div>
+.nav-link:hover {
+    color: var(--secondary-color);
+}
 
-                <!-- Bricks -->
-                <div class="product-card" data-category="bricks">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581092165854-40129fb6b841?w=300&h=300&fit=crop" alt="Red Bricks">
-                    </div>
-                    <h3>Red Bricks</h3>
-                    <p class="product-description">Traditional quality clay bricks</p>
-                    <div class="product-price">Rs. 6500/1000</div>
-                    <button class="btn btn-inquiry" onclick="inquire('Red Bricks')">Inquiry</button>
-                </div>
+.nav-link.btn-contact {
+    background: var(--secondary-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    color: var(--white);
+}
 
-                <div class="product-card" data-category="bricks">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581092165854-40129fb6b841?w=300&h=300&fit=crop" alt="Fly Ash Bricks">
-                    </div>
-                    <h3>Fly Ash Bricks</h3>
-                    <p class="product-description">Eco-friendly lightweight bricks</p>
-                    <div class="product-price">Rs. 4500/1000</div>
-                    <button class="btn btn-inquiry" onclick="inquire('Fly Ash Bricks')">Inquiry</button>
-                </div>
+.nav-link.btn-contact:hover {
+    background: #e67e00;
+    color: var(--white);
+}
 
-                <!-- Plumbing Materials -->
-                <div class="product-card" data-category="plumbing">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1584622181563-430f63602d4b?w=300&h=300&fit=crop" alt="PVC Pipes">
-                    </div>
-                    <h3>PVC Pipes (1 inch)</h3>
-                    <p class="product-description">Durable PVC pipes for water supply</p>
-                    <div class="product-price">Rs. 180/meter</div>
-                    <button class="btn btn-inquiry" onclick="inquire('PVC Pipes')">Inquiry</button>
-                </div>
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
 
-                <div class="product-card" data-category="plumbing">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1584622181563-430f63602d4b?w=300&h=300&fit=crop" alt="Water Tanks">
-                    </div>
-                    <h3>Water Tanks (1000L)</h3>
-                    <p class="product-description">High quality plastic water storage tanks</p>
-                    <div class="product-price">Rs. 8500</div>
-                    <button class="btn btn-inquiry" onclick="inquire('Water Tanks')">Inquiry</button>
-                </div>
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: var(--transition);
+}
 
-                <!-- Electrical Items -->
-                <div class="product-card" data-category="electrical">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&h=300&fit=crop" alt="Electrical Wires">
-                    </div>
-                    <h3>Electrical Wires (6 Sq.mm)</h3>
-                    <p class="product-description">Superior quality copper electrical wires</p>
-                    <div class="product-price">Rs. 85/meter</div>
-                    <button class="btn btn-inquiry" onclick="inquire('Electrical Wires')">Inquiry</button>
-                </div>
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%),
+                url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&h=600&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--white);
+    padding: 120px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
 
-                <div class="product-card" data-category="electrical">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&h=300&fit=crop" alt="Electrical Switches">
-                    </div>
-                    <h3>Electrical Switches</h3>
-                    <p class="product-description">Premium quality wall switches and outlets</p>
-                    <div class="product-price">Rs. 150-300</div>
-                    <button class="btn btn-inquiry" onclick="inquire('Electrical Switches')">Inquiry</button>
-                </div>
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 58, 82, 0.85);
+    z-index: 1;
+}
 
-                <!-- Tools -->
-                <div class="product-card" data-category="tools">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=300&h=300&fit=crop" alt="Drilling Machine">
-                    </div>
-                    <h3>Power Drilling Machine</h3>
-                    <p class="product-description">Heavy duty professional drilling equipment</p>
-                    <div class="product-price">Rs. 4500</div>
-                    <button class="btn btn-inquiry" onclick="inquire('Drilling Machine')">Inquiry</button>
-                </div>
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease;
+}
 
-                <div class="product-card" data-category="tools">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=300&h=300&fit=crop" alt="Hand Tools">
-                    </div>
-                    <h3>Professional Hand Tools Set</h3>
-                    <p class="product-description">Complete set of essential construction hand tools</p>
-                    <div class="product-price">Rs. 2200</div>
-                    <button class="btn btn-inquiry" onclick="inquire('Hand Tools Set')">Inquiry</button>
-                </div>
-            </div>
-        </div>
-    </section>
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 
-    <!-- Warehouse Section -->
-    <section id="warehouse" class="warehouse">
-        <div class="container">
-            <h2>Our Warehouse Facility</h2>
-            <div class="warehouse-content">
-                <div class="warehouse-image">
-                    <img src="https://images.unsplash.com/photo-1553095066-5014eb626f4b?w=600&h=400&fit=crop" alt="Warehouse">
-                </div>
-                <div class="warehouse-text">
-                    <h3>Large Stock Always Available</h3>
-                    <p>Our state-of-the-art warehouse facility ensures we always have the materials you need in stock. With strategic inventory management, we guarantee:</p>
-                    <ul class="warehouse-features">
-                        <li><i class="fas fa-check"></i> Bulk quantities in stock at all times</li>
-                        <li><i class="fas fa-check"></i> Organized storage for easy access</li>
-                        <li><i class="fas fa-check"></i> Quality control on all materials</li>
-                        <li><i class="fas fa-check"></i> Quick loading and dispatch</li>
-                        <li><i class="fas fa-check"></i> Weather-protected storage</li>
-                        <li><i class="fas fa-check"></i> Ready for wholesale orders</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Request Bulk Quote</a>
-                </div>
-            </div>
-        </div>
-    </section>
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
 
-    <!-- Why Choose Us Section -->
-    <section id="why-choose" class="why-choose">
-        <div class="container">
-            <h2>Why Choose Kishori Iron Store?</h2>
-            <div class="reasons-grid">
-                <div class="reason-card">
-                    <i class="fas fa-tag"></i>
-                    <h3>Best Price Guarantee</h3>
-                    <p>Competitive wholesale rates for bulk orders. We beat any reasonable quote in the market.</p>
-                </div>
-                <div class="reason-card">
-                    <i class="fas fa-warehouse"></i>
-                    <h3>Large Stock Availability</h3>
-                    <p>Fully stocked warehouse ensures immediate availability of all materials year-round.</p>
-                </div>
-                <div class="reason-card">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Trusted by Contractors</h3>
-                    <p>Preferred supplier for hundreds of construction professionals and builders in the region.</p>
-                </div>
-                <div class="reason-card">
-                    <i class="fas fa-shipping-fast"></i>
-                    <h3>Fast Local Delivery</h3>
-                    <p>Quick dispatch and reliable delivery service within Dhanushadham and nearby areas.</p>
-                </div>
-                <div class="reason-card">
-                    <i class="fas fa-certificate"></i>
-                    <h3>Quality Products</h3>
-                    <p>All materials meet industry standards. Certified suppliers ensure best quality always.</p>
-                </div>
-                <div class="reason-card">
-                    <i class="fas fa-phone-alt"></i>
-                    <h3>Dedicated Support</h3>
-                    <p>Expert staff ready to help with product selection, specifications, and technical guidance.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>What Our Customers Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Kishori Iron Store is my go-to supplier for all construction projects. Excellent quality, honest pricing, and reliable delivery. Highly recommended!"</p>
-                    <div class="testimonial-author">
-                        <strong>Rajesh Kumar</strong>
-                        <span>Contractor, Dhanushadham</span>
-                    </div>
-                </div>
+.btn {
+    padding: 0.75rem 2.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: var(--transition);
+    font-size: 1rem;
+}
 
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Best prices in town with no compromise on quality. Their staff is knowledgeable and always helpful. I've been their loyal customer for 5 years."</p>
-                    <div class="testimonial-author">
-                        <strong>Priya Sharma</strong>
-                        <span>Building Developer</span>
-                    </div>
-                </div>
+.btn-primary {
+    background: var(--secondary-color);
+    color: var(--white);
+}
 
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"For our large housing project, we needed reliable bulk supply. Kishori Iron Store delivered everything on time with consistent quality. Perfect partnership!"</p>
-                    <div class="testimonial-author">
-                        <strong>Vikram Singh</strong>
-                        <span>Construction Engineer</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.btn-primary:hover {
+    background: #e67e00;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(255, 140, 0, 0.3);
+}
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get the Best Hardware at the Best Price Today!</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Address</h4>
-                            <p>Kishori Iron Store<br>Dhanushadham<br>Building Materials Warehouse</p>
-                        </div>
-                    </div>
+.btn-secondary {
+    background: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--white);
+}
 
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p><a href="tel:+919876543210">+91 98765 43210</a></p>
-                        </div>
-                    </div>
+.btn-secondary:hover {
+    background: var(--light-grey);
+    transform: translateY(-3px);
+}
 
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p><a href="mailto:info@kishoriironstore.com">info@kishoriironstore.com</a></p>
-                        </div>
-                    </div>
+.btn-inquiry {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+}
 
-                    <div class="info-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <h4>WhatsApp</h4>
-                            <p><a href="https://wa.me/919876543210" target="_blank">Chat with us on WhatsApp</a></p>
-                        </div>
-                    </div>
+.btn-inquiry:hover {
+    background: #e67e00;
+}
 
-                    <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
+.hero-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
 
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form id="contactForm" onsubmit="handleSubmit(event)">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Phone Number" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
+.highlight-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 150px;
+}
 
-                <div class="map-container">
-                    <h3>Find Us Here</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.5123456789!2d75.8!3d16.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTYuNTAwMCDCsDMwJzAwLjAiTiA3NcKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
+.highlight-item i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Kishori Iron Store</h4>
-                    <p>Quality Hardware at Honest Prices. Your trusted building materials supplier in Dhanushadham.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Product Categories</h4>
-                    <ul>
-                        <li><a href="#products">Cement</a></li>
-                        <li><a href="#products">Steel & Rod</a></li>
-                        <li><a href="#products">Sand & Aggregates</a></li>
-                        <li><a href="#products">Tools & Equipment</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Business Hours</h4>
-                    <p>Monday - Saturday: 9:00 AM - 7:00 PM<br>Sunday: 10:00 AM - 5:00 PM<br>Emergency: 24/7 Available</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Kishori Iron Store. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
+.highlight-item span {
+    font-weight: 600;
+    font-size: 1rem;
+}
 
-    <!-- Inquiry Modal -->
-    <div id="inquiryModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Product Inquiry</h2>
-            <form onsubmit="submitInquiry(event)">
-                <div class="form-group">
-                    <label>Product:</label>
-                    <input type="text" id="productName" readonly>
-                </div>
-                <div class="form-group">
-                    <label>Your Name:</label>
-                    <input type="text" required>
-                </div>
-                <div class="form-group">
-                    <label>Email:</label>
-                    <input type="email" required>
-                </div>
-                <div class="form-group">
-                    <label>Phone:</label>
-                    <input type="tel" required>
-                </div>
-                <div class="form-group">
-                    <label>Quantity:</label>
-                    <input type="number" min="1" required>
-                </div>
-                <div class="form-group">
-                    <label>Message:</label>
-                    <textarea rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit Inquiry</button>
-            </form>
-        </div>
-    </div>
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+/* About Section */
+.about {
+    padding: 60px 20px;
+    background: var(--light-grey);
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+    font-weight: 700;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.about-text p {
+    font-size: 1rem;
+    color: var(--dark-grey);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.feature {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.feature i {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.3rem;
+}
+
+.feature h4 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.feature p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Products Section */
+.products {
+    padding: 60px 20px;
+    background: var(--white);
+}
+
+.products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.7rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    background: var(--white);
+    color: var(--primary-color);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: var(--secondary-color);
+    color: var(--white);
+    border-color: var(--secondary-color);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.product-card.hidden {
+    display: none;
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: var(--light-grey);
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: 1rem;
+    font-weight: 600;
+}
+
+.product-description {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0 1rem 0.5rem;
+    line-height: 1.5;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin: 1rem;
+}
+
+/* Warehouse Section */
+.warehouse {
+    padding: 60px 20px;
+    background: var(--light-grey);
+}
+
+.warehouse h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+    font-weight: 700;
+}
+
+.warehouse-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.warehouse-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.warehouse-text h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.warehouse-text p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.warehouse-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.warehouse-features li {
+    padding: 0.7rem 0;
+    color: var(--dark-grey);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.warehouse-features i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+/* Why Choose Us Section */
+.why-choose {
+    padding: 60px 20px;
+    background: var(--white);
+}
+
+.why-choose h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+    font-weight: 700;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.reason-card {
+    background: linear-gradient(135deg, #f5f5f5 0%, var(--white) 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 5px solid var(--secondary-color);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.reason-card i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.reason-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.reason-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 60px 20px;
+    background: var(--light-grey);
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+    font-weight: 700;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stars {
+    color: #ffc107;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.2rem;
+}
+
+.testimonial-text {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-author strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.testimonial-author span {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    background: var(--white);
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+    font-weight: 700;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.contact-info h3,
+.contact-form h3,
+.map-container h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    flex-shrink: 0;
+    margin-top: 0.3rem;
+}
+
+.info-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.info-item p {
+    color: #666;
+    margin: 0;
+}
+
+.info-item a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.contact-form {
+    background: var(--light-grey);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px rgba(255, 140, 0, 0.3);
+}
+
+.map-container {
+    background: var(--light-grey);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 0.3s ease;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close:hover,
+.close:focus {
+    color: var(--secondary-color);
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Footer */
+.footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 3rem 20px 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+.footer-section p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+    color: #ccc;
+}
+
+.footer-bottom a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        gap: 0;
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .about-content,
+    .warehouse-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .products h2 {
+        font-size: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .category-tabs {
+        gap: 0.5rem;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo span {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-highlights {
+        gap: 1rem;
+    }
+
+    .highlight-item {
+        min-width: 120px;
+        padding: 1rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
