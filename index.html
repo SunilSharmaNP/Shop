@@ -3,604 +3,922 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kishori Iron Store - Premium Quality Hardware at Honest Prices. Luxury hardware supplier with transparent glass design.">
-    <meta name="keywords" content="premium hardware, luxury building materials, transparent design, construction materials">
-    <title>Kishori Iron Store - Premium Hardware Solutions</title>
+    <meta name="description" content="Kishori Iron Store - Premium Quality Hardware & Building Materials. Trusted supplier for cement, steel, sand, bricks & construction supplies in Dhanushadham.">
+    <meta name="keywords" content="hardware store, building materials, cement supplier, TMT rod, sand, bricks, dhanushadham, construction materials">
+    <title>Kishori Iron Store - Premium Hardware Solutions | Dhanushadham</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- PREMIUM GLASS SIDEBAR -->
-    <div class="premium-sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <div class="brand-logo">
-                <div class="logo-icon">
-                    <i class="fas fa-gem"></i>
-                </div>
-                <span>Kishori</span>
+
+<!-- ============================================================================
+     SIDEBAR NAVIGATION
+     ============================================================================ -->
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <div class="sidebar-logo">
+            <div class="logo-icon"><i class="fas fa-gem"></i></div>
+            <div class="logo-info">
+                <h3>Kishori</h3>
+                <small>Iron Store</small>
             </div>
-            <button class="close-btn" id="sidebarClose">
-                <i class="fas fa-times"></i>
+        </div>
+        <button class="sidebar-close" id="closeSidebar"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="sidebar-promo">
+        <div class="promo-tag">LIMITED OFFER</div>
+        <h4>10% OFF</h4>
+        <p>On Bulk Orders Above ₹10,000</p>
+        <a href="#products" class="promo-btn">Claim Offer</a>
+    </div>
+
+    <nav class="sidebar-menu">
+        <a href="#home" class="sidebar-nav-link"><i class="fas fa-home"></i> Home</a>
+        <a href="#about" class="sidebar-nav-link"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="#products" class="sidebar-nav-link"><i class="fas fa-box"></i> Products</a>
+        
+        <div class="sidebar-category-group">
+            <button class="category-header" id="categoryBtn">
+                <i class="fas fa-list"></i> All Categories <i class="fas fa-chevron-down"></i>
             </button>
+            <div class="category-list" id="categoryList">
+                <a href="#products" onclick="filterProducts('cement')"><i class="fas fa-cube"></i> Cement</a>
+                <a href="#products" onclick="filterProducts('steel')"><i class="fas fa-hammer"></i> Steel & Rod</a>
+                <a href="#products" onclick="filterProducts('sand')"><i class="fas fa-mountain"></i> Sand & Aggregates</a>
+                <a href="#products" onclick="filterProducts('bricks')"><i class="fas fa-brick"></i> Bricks</a>
+                <a href="#products" onclick="filterProducts('plumbing')"><i class="fas fa-pipe"></i> Plumbing</a>
+                <a href="#products" onclick="filterProducts('electrical')"><i class="fas fa-plug"></i> Electrical</a>
+                <a href="#products" onclick="filterProducts('tools')"><i class="fas fa-wrench"></i> Tools</a>
+            </div>
         </div>
 
-        <nav class="sidebar-navigation">
-            <a href="#home" class="nav-item">
-                <span class="nav-icon"><i class="fas fa-home"></i></span>
-                <span class="nav-text">Home</span>
-            </a>
-            <a href="#about" class="nav-item">
-                <span class="nav-icon"><i class="fas fa-info-circle"></i></span>
-                <span class="nav-text">About</span>
-            </a>
-            <a href="#products" class="nav-item">
-                <span class="nav-icon"><i class="fas fa-box"></i></span>
-                <span class="nav-text">Products</span>
-            </a>
-            <a href="#features" class="nav-item">
-                <span class="nav-icon"><i class="fas fa-star"></i></span>
-                <span class="nav-text">Features</span>
-            </a>
-            <a href="#testimonials" class="nav-item">
-                <span class="nav-icon"><i class="fas fa-comments"></i></span>
-                <span class="nav-text">Reviews</span>
-            </a>
-            <a href="#contact" class="nav-item">
-                <span class="nav-icon"><i class="fas fa-envelope"></i></span>
-                <span class="nav-text">Contact</span>
-            </a>
-        </nav>
+        <a href="#warehouse" class="sidebar-nav-link"><i class="fas fa-warehouse"></i> Our Warehouse</a>
+        <a href="#why-us" class="sidebar-nav-link"><i class="fas fa-star"></i> Why Choose Us</a>
+        <a href="#testimonials" class="sidebar-nav-link"><i class="fas fa-comments"></i> Testimonials</a>
+        <a href="#contact" class="sidebar-nav-link"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
 
-        <div class="sidebar-footer">
-            <div class="contact-quick">
-                <a href="tel:+919876543210" class="quick-contact">
-                    <i class="fas fa-phone"></i> Call Us
+    <div class="sidebar-footer-info">
+        <h5>Get in Touch</h5>
+        <a href="tel:+919876543210" class="footer-contact-link call">
+            <i class="fas fa-phone"></i> +91 98765 43210
+        </a>
+        <a href="https://wa.me/919876543210" target="_blank" class="footer-contact-link whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp Chat
+        </a>
+        <a href="mailto:info@kishoriironstore.com" class="footer-contact-link email">
+            <i class="fas fa-envelope"></i> Email Us
+        </a>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-hours">
+        <h5>Working Hours</h5>
+        <div class="hours-item">
+            <span>Mon - Sat</span>
+            <strong>9:00 AM - 7:00 PM</strong>
+        </div>
+        <div class="hours-item">
+            <span>Sunday</span>
+            <strong>10:00 AM - 5:00 PM</strong>
+        </div>
+        <div class="hours-item highlight">
+            <span>24/7 Emergency</span>
+            <strong>Always Available</strong>
+        </div>
+    </div>
+
+    <div class="sidebar-social">
+        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/919876543210" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+</aside>
+
+<div class="overlay" id="overlay"></div>
+
+<!-- ============================================================================
+     NAVBAR
+     ============================================================================ -->
+<header class="navbar">
+    <div class="navbar-top">
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <button class="hamburger" id="openSidebar"><i class="fas fa-bars"></i></button>
+                <a href="#home" class="navbar-brand">
+                    <div class="brand-icon"><i class="fas fa-tools"></i></div>
+                    <div class="brand-text">
+                        <span class="brand-name">Kishori Iron Store</span>
+                        <span class="brand-tagline">Quality Hardware at Honest Prices</span>
+                    </div>
                 </a>
-                <a href="https://wa.me/919876543210" class="quick-contact whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
+            </div>
+
+            <div class="navbar-search">
+                <input type="text" id="searchInput" placeholder="Search: Cement, TMT Rod, Bricks...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="navbar-right">
+                <a href="tel:+919876543210" class="nav-action-btn call-btn" title="Call Us">
+                    <i class="fas fa-phone"></i>
+                    <span>Call</span>
                 </a>
+                <a href="https://wa.me/919876543210" target="_blank" class="nav-action-btn whatsapp-btn" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Chat</span>
+                </a>
+                <a href="#contact" class="nav-cta">Contact Us</a>
             </div>
         </div>
     </div>
 
-    <!-- OVERLAY -->
-    <div class="overlay" id="overlay"></div>
-
-    <!-- PREMIUM NAVBAR -->
-    <nav class="premium-navbar">
+    <nav class="navbar-menu">
         <div class="navbar-container">
-            <div class="navbar-brand">
-                <button class="menu-btn" id="menuBtn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div class="brand-text">
-                    <i class="fas fa-gem"></i>
-                    <span>Kishori Iron</span>
-                </div>
-            </div>
-
-            <ul class="navbar-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#features">Why Us</a></li>
-                <li><a href="#contact" class="cta-btn">Contact</a></li>
-            </ul>
-
-            <div class="navbar-actions">
-                <a href="tel:+919876543210" class="action-icon">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <a href="https://wa.me/919876543210" class="action-icon whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
+            <a href="#home" class="navbar-menu-link active">Home</a>
+            <a href="#about" class="navbar-menu-link">About</a>
+            <a href="#products" class="navbar-menu-link">Products</a>
+            <a href="#warehouse" class="navbar-menu-link">Warehouse</a>
+            <a href="#why-us" class="navbar-menu-link">Why Us</a>
+            <a href="#testimonials" class="navbar-menu-link">Testimonials</a>
+            <a href="#contact" class="navbar-menu-link">Contact</a>
         </div>
     </nav>
+</header>
 
-    <!-- HERO SECTION - PREMIUM -->
-    <section id="home" class="hero-section">
-        <div class="hero-bg-container">
-            <div class="hero-bg"></div>
-            <div class="hero-gradient"></div>
-        </div>
-
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    Premium <span class="gradient-text">Hardware Solutions</span>
-                    <br>For Modern Construction
-                </h1>
-                <p class="hero-subtitle">
-                    Experience luxury quality at transparent honest prices. 
-                    Trusted by 500+ builders across the region.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#products" class="btn btn-primary">Explore Now</a>
-                    <a href="#contact" class="btn btn-secondary">Get Quote</a>
-                </div>
-            </div>
-
-            <div class="hero-stats">
-                <div class="stat-card glass-effect">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Happy Customers</div>
-                </div>
-                <div class="stat-card glass-effect">
-                    <div class="stat-number">50K+</div>
-                    <div class="stat-label">Sq.ft Warehouse</div>
-                </div>
-                <div class="stat-card glass-effect">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Quality Certified</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Floating Elements -->
-        <div class="floating-box float-1"></div>
-        <div class="floating-box float-2"></div>
-        <div class="floating-box float-3"></div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>About Our Store</h2>
-                <p>Premium Quality Hardware Since Many Years</p>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-image-container">
-                    <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1553095066-5014eb626f4b?w=600&h=600&fit=crop" alt="Warehouse">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-
-                <div class="about-content">
-                    <h3>Trusted By Builders & Contractors</h3>
-                    <p>
-                        Kishori Iron Store is a premium hardware supplier serving the construction industry with excellence. 
-                        Our fully-stocked warehouse ensures immediate availability of all materials with certified quality.
-                    </p>
-
-                    <div class="features-list">
-                        <div class="feature-item glass-effect">
-                            <i class="fas fa-check"></i>
-                            <span>50,000+ Sq.ft Modern Warehouse</span>
-                        </div>
-                        <div class="feature-item glass-effect">
-                            <i class="fas fa-check"></i>
-                            <span>Bulk Supply & Wholesale Rates</span>
-                        </div>
-                        <div class="feature-item glass-effect">
-                            <i class="fas fa-check"></i>
-                            <span>24/7 Emergency Support</span>
-                        </div>
-                        <div class="feature-item glass-effect">
-                            <i class="fas fa-check"></i>
-                            <span>Industry Certified Products</span>
-                        </div>
-                    </div>
-
-                    <a href="#products" class="btn btn-primary">View Products</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRODUCTS SECTION -->
-    <section id="products" class="products-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Premium Product Range</h2>
-                <p>Curated selection of finest building materials</p>
-            </div>
-
-            <div class="category-filter">
-                <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="cement">Cement</button>
-                <button class="filter-btn" data-category="steel">Steel</button>
-                <button class="filter-btn" data-category="sand">Sand</button>
-                <button class="filter-btn" data-category="bricks">Bricks</button>
-                <button class="filter-btn" data-category="tools">Tools</button>
-            </div>
-
-            <div class="products-showcase">
-                <!-- CEMENT PRODUCTS -->
-                <div class="product-item glass-effect" data-category="cement">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop" alt="OPC Cement">
-                        <span class="product-badge">Premium</span>
-                    </div>
-                    <div class="product-details">
-                        <h4>OPC Cement (50kg)</h4>
-                        <p>High quality ordinary Portland cement</p>
-                        <div class="price-section">
-                            <span class="price">₹450</span>
-                            <button class="btn btn-small" onclick="inquire('OPC Cement')">Inquiry</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item glass-effect" data-category="cement">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop" alt="PPC Cement">
-                        <span class="product-badge">Popular</span>
-                    </div>
-                    <div class="product-details">
-                        <h4>PPC Cement (50kg)</h4>
-                        <p>Pozzolana Portland cement for durability</p>
-                        <div class="price-section">
-                            <span class="price">₹480</span>
-                            <button class="btn btn-small" onclick="inquire('PPC Cement')">Inquiry</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEEL PRODUCTS -->
-                <div class="product-item glass-effect" data-category="steel">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1587534382346-6873bff299c8?w=400&h=300&fit=crop" alt="TMT Rod 8mm">
-                        <span class="product-badge">Best Seller</span>
-                    </div>
-                    <div class="product-details">
-                        <h4>TMT Rod 8mm</h4>
-                        <p>High strength thermomechanical treated</p>
-                        <div class="price-section">
-                            <span class="price">₹680/kg</span>
-                            <button class="btn btn-small" onclick="inquire('TMT Rod 8mm')">Inquiry</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item glass-effect" data-category="steel">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1587534382346-6873bff299c8?w=400&h=300&fit=crop" alt="TMT Rod 10mm">
-                    </div>
-                    <div class="product-details">
-                        <h4>TMT Rod 10mm</h4>
-                        <p>Premium quality reinforcement rod</p>
-                        <div class="price-section">
-                            <span class="price">₹720/kg</span>
-                            <button class="btn btn-small" onclick="inquire('TMT Rod 10mm')">Inquiry</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item glass-effect" data-category="steel">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1587534382346-6873bff299c8?w=400&h=300&fit=crop" alt="TMT Rod 12mm">
-                    </div>
-                    <div class="product-details">
-                        <h4>TMT Rod 12mm</h4>
-                        <p>Heavy duty reinforcement solution</p>
-                        <div class="price-section">
-                            <span class="price">₹760/kg</span>
-                            <button class="btn btn-small" onclick="inquire('TMT Rod 12mm')">Inquiry</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SAND PRODUCTS -->
-                <div class="product-item glass-effect" data-category="sand">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1580882631201-48d86c0b8cc9?w=400&h=300&fit=crop" alt="River Sand">
-                        <span class="product-badge">Bulk</span>
-                    </div>
-                    <div class="product-details">
-                        <h4>River Sand</h4>
-                        <p>Clean pure construction sand</p>
-                        <div class="price-section">
-                            <span class="price">₹1200/ton</span>
-                            <button class="btn btn-small" onclick="inquire('River Sand')">Inquiry</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item glass-effect" data-category="sand">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1580882631201-48d86c0b8cc9?w=400&h=300&fit=crop" alt="Crush Sand">
-                    </div>
-                    <div class="product-details">
-                        <h4>Crush Sand (M-Sand)</h4>
-                        <p>Superior strength manufactured sand</p>
-                        <div class="price-section">
-                            <span class="price">₹950/ton</span>
-                            <button class="btn btn-small" onclick="inquire('Crush Sand')">Inquiry</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BRICKS PRODUCTS -->
-                <div class="product-item glass-effect" data-category="bricks">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581092165854-40129fb6b841?w=400&h=300&fit=crop" alt="Red Bricks">
-                    </div>
-                    <div class="product-details">
-                        <h4>Red Bricks</h4>
-                        <p>Traditional quality clay bricks</p>
-                        <div class="price-section">
-                            <span class="price">₹6500/1000</span>
-                            <button class="btn btn-small" onclick="inquire('Red Bricks')">Inquiry</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item glass-effect" data-category="bricks">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581092165854-40129fb6b841?w=400&h=300&fit=crop" alt="Fly Ash Bricks">
-                    </div>
-                    <div class="product-details">
-                        <h4>Fly Ash Bricks</h4>
-                        <p>Eco-friendly lightweight solution</p>
-                        <div class="price-section">
-                            <span class="price">₹4500/1000</span>
-                            <button class="btn btn-small" onclick="inquire('Fly Ash Bricks')">Inquiry</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TOOLS -->
-                <div class="product-item glass-effect" data-category="tools">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=400&h=300&fit=crop" alt="Power Drill">
-                    </div>
-                    <div class="product-details">
-                        <h4>Power Drilling Machine</h4>
-                        <p>Professional heavy duty equipment</p>
-                        <div class="price-section">
-                            <span class="price">₹4500</span>
-                            <button class="btn btn-small" onclick="inquire('Drill')">Inquiry</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item glass-effect" data-category="tools">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=400&h=300&fit=crop" alt="Hand Tools">
-                    </div>
-                    <div class="product-details">
-                        <h4>Hand Tools Set</h4>
-                        <p>Complete professional tool kit</p>
-                        <div class="price-section">
-                            <span class="price">₹2200</span>
-                            <button class="btn btn-small" onclick="inquire('Tools')">Inquiry</button>
-                        </div>
+<!-- ============================================================================
+     HERO SECTION WITH SLIDER
+     ============================================================================ -->
+<section class="hero" id="home">
+    <div class="hero-slider">
+        <div class="hero-slide active" style="background-image: linear-gradient(135deg, rgba(15,23,42,0.65) 0%, rgba(26,47,74,0.65) 100%), url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&h=1080&fit=crop');">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="slide-title">Premium Quality Hardware</h1>
+                    <p class="slide-subtitle">Trusted by 500+ Builders & Contractors Across the Region</p>
+                    <div class="slide-buttons">
+                        <a href="#products" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Shop Now</a>
+                        <a href="#contact" class="btn btn-secondary"><i class="fas fa-quote-left"></i> Get Free Quote</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- FEATURES SECTION -->
-    <section id="features" class="features-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Choose Us</h2>
-                <p>Premium service and quality guaranteed</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card glass-effect">
-                    <div class="feature-icon">
-                        <i class="fas fa-tag"></i>
-                    </div>
-                    <h3>Best Prices</h3>
-                    <p>Wholesale rates with no hidden charges. Best price guarantee for bulk orders.</p>
-                </div>
-
-                <div class="feature-card glass-effect">
-                    <div class="feature-icon">
-                        <i class="fas fa-warehouse"></i>
-                    </div>
-                    <h3>Large Stock</h3>
-                    <p>50,000+ sq.ft warehouse with full inventory always available 24/7.</p>
-                </div>
-
-                <div class="feature-card glass-effect">
-                    <div class="feature-icon">
-                        <i class="fas fa-shipping-fast"></i>
-                    </div>
-                    <h3>Fast Delivery</h3>
-                    <p>Quick dispatch and reliable local delivery service within Dhanushadham.</p>
-                </div>
-
-                <div class="feature-card glass-effect">
-                    <div class="feature-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Quality Certified</h3>
-                    <p>All products certified by industry standards. 100% quality assurance.</p>
-                </div>
-
-                <div class="feature-card glass-effect">
-                    <div class="feature-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Expert Support</h3>
-                    <p>Knowledgeable team for product selection and technical guidance.</p>
-                </div>
-
-                <div class="feature-card glass-effect">
-                    <div class="feature-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Customer First</h3>
-                    <p>Trusted by 500+ customers with 100% satisfaction guarantee.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="testimonials-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Customer Reviews</h2>
-                <p>Trusted by industry leaders</p>
-            </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card glass-effect">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Best hardware supplier in town! Excellent quality and honest prices. Highly recommended for all contractors."</p>
-                    <div class="testimonial-author">
-                        <strong>Rajesh Kumar</strong>
-                        <span>Contractor</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-card glass-effect">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"5 years of service with consistent quality and best prices. They understand construction needs perfectly."</p>
-                    <div class="testimonial-author">
-                        <strong>Priya Sharma</strong>
-                        <span>Building Developer</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-card glass-effect">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"For our large project, they delivered bulk materials on time with perfect quality. Perfect partnership!"</p>
-                    <div class="testimonial-author">
-                        <strong>Vikram Singh</strong>
-                        <span>Construction Engineer</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-card glass-effect">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Exceptional service and quick response. They truly understand construction industry needs. Excellent!"</p>
-                    <div class="testimonial-author">
-                        <strong>Anil Patel</strong>
-                        <span>Building Contractor</span>
+        <div class="hero-slide" style="background-image: linear-gradient(135deg, rgba(15,23,42,0.65) 0%, rgba(26,47,74,0.65) 100%), url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1920&h=1080&fit=crop');">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="slide-title">Largest Warehouse Facility</h1>
+                    <p class="slide-subtitle">50,000+ Sq.ft Modern Storage with Full Inventory Always Available</p>
+                    <div class="slide-buttons">
+                        <a href="#warehouse" class="btn btn-primary"><i class="fas fa-building"></i> View Warehouse</a>
+                        <a href="#contact" class="btn btn-secondary"><i class="fas fa-phone"></i> Call for Details</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get in Touch</h2>
-                <p>We're here to help with your construction needs</p>
-            </div>
-
-            <div class="contact-grid">
-                <div class="contact-info glass-effect">
-                    <div class="info-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Kishori Iron Store<br>Dhanushadham</p>
-                        </div>
+        <div class="hero-slide" style="background-image: linear-gradient(135deg, rgba(15,23,42,0.65) 0%, rgba(26,47,74,0.65) 100%), url('https://images.unsplash.com/photo-1590080876-dfc236d69f25?w=1920&h=1080&fit=crop');">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="slide-title">Wholesale Rates Available</h1>
+                    <p class="slide-subtitle">Best Prices Guaranteed for Bulk Orders with Fast Local Delivery</p>
+                    <div class="slide-buttons">
+                        <a href="#products" class="btn btn-primary"><i class="fas fa-list"></i> Browse Catalog</a>
+                        <a href="#contact" class="btn btn-secondary"><i class="fas fa-tag"></i> Bulk Quote</a>
                     </div>
-
-                    <div class="info-card">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p><a href="tel:+919876543210">+91 98765 43210</a></p>
-                        </div>
-                    </div>
-
-                    <div class="info-card">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p><a href="mailto:info@kishoriironstore.com">info@kishoriironstore.com</a></p>
-                        </div>
-                    </div>
-
-                    <div class="info-card">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <h4>WhatsApp</h4>
-                            <p><a href="https://wa.me/919876543210" target="_blank">Chat Now</a></p>
-                        </div>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/919876543210" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-
-                <div class="contact-form glass-effect">
-                    <h3>Quick Inquiry</h3>
-                    <form onsubmit="handleSubmit(event)">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Email Address" required>
-                        <input type="tel" placeholder="Phone Number" required>
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Kishori Iron Store</h4>
-                    <p>Premium hardware solutions with transparent pricing and quality assurance.</p>
+        <div class="hero-slide" style="background-image: linear-gradient(135deg, rgba(15,23,42,0.65) 0%, rgba(26,47,74,0.65) 100%), url('https://images.unsplash.com/photo-1581092165854-40129fb6b841?w=1920&h=1080&fit=crop');">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="slide-title">Quality Certified Materials</h1>
+                    <p class="slide-subtitle">All Products Meet Industry Standards with 100% Quality Assurance</p>
+                    <div class="slide-buttons">
+                        <a href="#products" class="btn btn-primary"><i class="fas fa-certificate"></i> View All Products</a>
+                        <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Get Certified Report</a>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Hours</h4>
-                    <p>Mon-Sat: 9AM - 7PM<br>Sun: 10AM - 5PM<br>24/7 Emergency</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Kishori Iron Store. All rights reserved.</p>
             </div>
         </div>
-    </footer>
 
-    <!-- MODAL -->
-    <div id="inquiryModal" class="modal glass-effect">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal()">×</button>
-            <h2>Product Inquiry</h2>
-            <form onsubmit="submitInquiry(event)">
-                <input type="text" id="productName" readonly>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Phone" required>
-                <input type="number" placeholder="Quantity" min="1" required>
-                <textarea placeholder="Message" rows="4" required></textarea>
-                <button type="submit" class="btn btn-primary">Submit</button>
+        <button class="slider-btn prev" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+
+        <div class="slider-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+        </div>
+
+        <div class="slider-progress">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <div class="hero-highlights">
+        <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-warehouse"></i></div>
+            <h4>Large Stock</h4>
+            <p>Always Available 24/7</p>
+        </div>
+        <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-tag"></i></div>
+            <h4>Best Prices</h4>
+            <p>Wholesale Rates Guaranteed</p>
+        </div>
+        <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-truck"></i></div>
+            <h4>Fast Delivery</h4>
+            <p>Quick Local Dispatch</p>
+        </div>
+        <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-certificate"></i></div>
+            <h4>Quality Assured</h4>
+            <p>100% Certified Materials</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     ABOUT SECTION
+     ============================================================================ -->
+<section class="section about" id="about">
+    <div class="container">
+        <div class="section-header">
+            <h2>About Kishori Iron Store</h2>
+            <p>Your Trusted Hardware Partner Since Many Years</p>
+            <div class="header-line"></div>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1553095066-5014eb626f4b?w=700&h=700&fit=crop" alt="Kishori Iron Store Warehouse Facility">
+                <div class="image-overlay">
+                    <span class="trust-badge"><i class="fas fa-award"></i> Trusted Since Years</span>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <h3>Premium Hardware Solutions for Construction</h3>
+                <p class="lead-text">Kishori Iron Store is a leading hardware and building materials supplier serving 500+ customers including contractors, builders, engineers, and homeowners across Dhanushadham and surrounding regions. Our state-of-the-art 50,000+ sq.ft warehouse ensures immediate availability of all materials with industry-certified quality.</p>
+
+                <div class="stats-grid">
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Sq.ft Warehouse</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Quality Certified</div>
+                    </div>
+                </div>
+
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> <div><strong>Large Warehouse Facility</strong><br><small>Fully stocked with all building materials</small></div></li>
+                    <li><i class="fas fa-check-circle"></i> <div><strong>Bulk Supply Available</strong><br><small>Wholesale rates for contractors and projects</small></div></li>
+                    <li><i class="fas fa-check-circle"></i> <div><strong>24/7 Emergency Support</strong><br><small>Always available for urgent material needs</small></div></li>
+                    <li><i class="fas fa-check-circle"></i> <div><strong>Industry Certified</strong><br><small>All products meet standards with quality assurance</small></div></li>
+                </ul>
+
+                <a href="#products" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Explore Products</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     PRODUCTS SECTION
+     ============================================================================ -->
+<section class="section products" id="products">
+    <div class="container">
+        <div class="section-header">
+            <h2>Premium Product Range</h2>
+            <p>Handpicked Quality Materials at the Best Prices</p>
+            <div class="header-line"></div>
+        </div>
+
+        <div class="product-filter-bar">
+            <div class="filter-title"><i class="fas fa-filter"></i> Filter by Category:</div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="cement"><i class="fas fa-cube"></i> Cement</button>
+                <button class="filter-btn" data-filter="steel"><i class="fas fa-hammer"></i> Steel & Rod</button>
+                <button class="filter-btn" data-filter="sand"><i class="fas fa-mountain"></i> Sand</button>
+                <button class="filter-btn" data-filter="bricks"><i class="fas fa-brick"></i> Bricks</button>
+                <button class="filter-btn" data-filter="plumbing"><i class="fas fa-pipe"></i> Plumbing</button>
+                <button class="filter-btn" data-filter="electrical"><i class="fas fa-plug"></i> Electrical</button>
+                <button class="filter-btn" data-filter="tools"><i class="fas fa-wrench"></i> Tools</button>
+            </div>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <!-- CEMENT PRODUCTS -->
+            <div class="product-card" data-category="cement" data-price="450">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop" alt="OPC Cement 50kg">
+                    <div class="product-badges"><span class="badge badge-premium">Premium</span></div>
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">OPC Cement (50kg)</h3>
+                    <p class="product-desc">High-strength Ordinary Portland Cement for structural work</p>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="review-count">(128)</span></div>
+                    <div class="product-price"><span class="price">₹450</span><span class="original-price">₹500</span><span class="discount">10%</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('OPC Cement', '₹450', 'Premium OPC cement')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('OPC Cement')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="cement" data-price="480">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop" alt="PPC Cement 50kg">
+                    <div class="product-badges"><span class="badge badge-popular">Popular</span></div>
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">PPC Cement (50kg)</h3>
+                    <p class="product-desc">Pozzolana Portland Cement for improved durability</p>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="review-count">(245)</span></div>
+                    <div class="product-price"><span class="price">₹480</span><span class="original-price">₹530</span><span class="discount">9%</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('PPC Cement', '₹480', 'PPC Cement')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('PPC Cement')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEEL PRODUCTS -->
+            <div class="product-card" data-category="steel" data-price="680">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1587534382346-6873bff299c8?w=400&h=400&fit=crop" alt="TMT Rod 8mm">
+                    <div class="product-badges"><span class="badge badge-bestseller">Best Seller</span></div>
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">TMT Rod 8mm</h3>
+                    <p class="product-desc">Thermo-Mechanically Treated steel rod</p>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="review-count">(356)</span></div>
+                    <div class="product-price"><span class="price">₹680/kg</span><span class="original-price">₹750/kg</span><span class="discount">9%</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('TMT Rod 8mm', '₹680/kg', 'TMT Rod')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('TMT Rod 8mm')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="steel" data-price="720">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1587534382346-6873bff299c8?w=400&h=400&fit=crop" alt="TMT Rod 10mm">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">TMT Rod 10mm</h3>
+                    <p class="product-desc">Premium quality reinforcement rod</p>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="review-count">(298)</span></div>
+                    <div class="product-price"><span class="price">₹720/kg</span><span class="original-price">₹800/kg</span><span class="discount">10%</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('TMT Rod 10mm', '₹720/kg', 'TMT Rod')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('TMT Rod 10mm')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="steel" data-price="760">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1587534382346-6873bff299c8?w=400&h=400&fit=crop" alt="TMT Rod 12mm">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">TMT Rod 12mm</h3>
+                    <p class="product-desc">Heavy-duty reinforcement solution</p>
+                    <div class="product-rating"><span class="stars">★★★★☆</span><span class="review-count">(187)</span></div>
+                    <div class="product-price"><span class="price">₹760/kg</span><span class="original-price">₹850/kg</span><span class="discount">10%</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('TMT Rod 12mm', '₹760/kg', 'TMT Rod')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('TMT Rod 12mm')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SAND PRODUCTS -->
+            <div class="product-card" data-category="sand" data-price="1200">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1580882631201-48d86c0b8cc9?w=400&h=400&fit=crop" alt="River Sand">
+                    <div class="product-badges"><span class="badge badge-bulk">Bulk</span></div>
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">River Sand</h3>
+                    <p class="product-desc">Clean river sand for construction</p>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="review-count">(412)</span></div>
+                    <div class="product-price"><span class="price">₹1,200/ton</span><span class="original-price">₹1,350/ton</span><span class="discount">11%</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('River Sand', '₹1,200/ton', 'Sand')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('River Sand')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="sand" data-price="950">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1580882631201-48d86c0b8cc9?w=400&h=400&fit=crop" alt="Crush Sand">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">Crush Sand (M-Sand)</h3>
+                    <p class="product-desc">Manufactured sand for concrete</p>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="review-count">(367)</span></div>
+                    <div class="product-price"><span class="price">₹950/ton</span><span class="original-price">₹1,050/ton</span><span class="discount">9%</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('Crush Sand', '₹950/ton', 'Sand')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('Crush Sand')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BRICKS PRODUCTS -->
+            <div class="product-card" data-category="bricks" data-price="6500">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1581092165854-40129fb6b841?w=400&h=400&fit=crop" alt="Red Bricks">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">Red Bricks</h3>
+                    <p class="product-desc">Traditional quality clay bricks</p>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="review-count">(524)</span></div>
+                    <div class="product-price"><span class="price">₹6,500/1000</span><span class="original-price">₹7,200/1000</span><span class="discount">10%</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('Red Bricks', '₹6,500/1000', 'Bricks')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('Red Bricks')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="bricks" data-price="4500">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1581092165854-40129fb6b841?w=400&h=400&fit=crop" alt="Fly Ash Bricks">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">Fly Ash Bricks</h3>
+                    <p class="product-desc">Eco-friendly lightweight bricks</p>
+                    <div class="product-rating"><span class="stars">★★★★☆</span><span class="review-count">(289)</span></div>
+                    <div class="product-price"><span class="price">₹4,500/1000</span><span class="original-price">₹5,000/1000</span><span class="discount">10%</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('Fly Ash Bricks', '₹4,500/1000', 'Bricks')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('Fly Ash Bricks')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLUMBING PRODUCTS -->
+            <div class="product-card" data-category="plumbing" data-price="180">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1584622181563-430f63602d4b?w=400&h=400&fit=crop" alt="PVC Pipes">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">PVC Pipes (1 inch)</h3>
+                    <p class="product-desc">Durable water supply pipes</p>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="review-count">(201)</span></div>
+                    <div class="product-price"><span class="price">₹180/meter</span><span class="original-price">₹200/meter</span><span class="discount">10%</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('PVC Pipes', '₹180/meter', 'Plumbing')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('PVC Pipes')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="plumbing" data-price="8500">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1584622181563-430f63602d4b?w=400&h=400&fit=crop" alt="Water Tanks">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">Water Tanks (1000L)</h3>
+                    <p class="product-desc">High-quality plastic storage tank</p>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="review-count">(178)</span></div>
+                    <div class="product-price"><span class="price">₹8,500</span><span class="original-price">₹9,500</span><span class="discount">11%</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('Water Tank', '₹8,500', 'Plumbing')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('Water Tanks')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ELECTRICAL PRODUCTS -->
+            <div class="product-card" data-category="electrical" data-price="85">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop" alt="Electrical Wires">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">Electrical Wires (6 Sq.mm)</h3>
+                    <p class="product-desc">Pure copper quality wiring</p>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="review-count">(343)</span></div>
+                    <div class="product-price"><span class="price">₹85/meter</span><span class="original-price">₹95/meter</span><span class="discount">10%</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('Electrical Wires', '₹85/meter', 'Electrical')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('Electrical Wires')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="electrical" data-price="200">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop" alt="Switches">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">Electrical Switches</h3>
+                    <p class="product-desc">Premium wall switches and outlets</p>
+                    <div class="product-rating"><span class="stars">★★★★☆</span><span class="review-count">(256)</span></div>
+                    <div class="product-price"><span class="price">₹150-300</span><span class="discount">Varied</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('Switches', '₹150-300', 'Electrical')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('Switches')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOOLS PRODUCTS -->
+            <div class="product-card" data-category="tools" data-price="4500">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=400&h=400&fit=crop" alt="Power Drill">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">Power Drilling Machine</h3>
+                    <p class="product-desc">Professional heavy-duty equipment</p>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="review-count">(432)</span></div>
+                    <div class="product-price"><span class="price">₹4,500</span><span class="original-price">₹5,500</span><span class="discount">18%</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('Drill', '₹4,500', 'Tools')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('Drill')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="tools" data-price="2200">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=400&h=400&fit=crop" alt="Hand Tools">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="product-body">
+                    <h3 class="product-title">Professional Hand Tools Set</h3>
+                    <p class="product-desc">Complete tool kit with essentials</p>
+                    <div class="product-rating"><span class="stars">★★★★★</span><span class="review-count">(567)</span></div>
+                    <div class="product-price"><span class="price">₹2,200</span><span class="original-price">₹3,000</span><span class="discount">27%</span></div>
+                    <div class="product-features"><span><i class="fas fa-check"></i> In Stock</span><span><i class="fas fa-truck"></i> Free Delivery</span></div>
+                    <div class="product-actions">
+                        <button class="btn btn-outline" onclick="quickView('Hand Tools', '₹2,200', 'Tools')">Quick View</button>
+                        <button class="btn btn-primary" onclick="inquireNow('Hand Tools')"><i class="fas fa-phone"></i> Inquiry</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     WAREHOUSE SECTION
+     ============================================================================ -->
+<section class="section warehouse" id="warehouse">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Modern Warehouse Facility</h2>
+            <p>State-of-the-Art Storage with Complete Inventory</p>
+            <div class="header-line"></div>
+        </div>
+
+        <div class="warehouse-grid">
+            <div class="warehouse-images">
+                <img src="https://images.unsplash.com/photo-1553095066-5014eb626f4b?w=900&h=800&fit=crop" alt="Warehouse">
+            </div>
+
+            <div class="warehouse-info">
+                <h3>Large Stock Always Available</h3>
+                <p>Our state-of-the-art warehouse with 50,000+ sq.ft storage ensures we always have materials in stock. Strategic inventory management guarantees immediate availability of quality products.</p>
+
+                <ul class="warehouse-features">
+                    <li><i class="fas fa-check-circle"></i> <span>Bulk quantities in stock at all times</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span>Organized storage for easy access</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span>Quality control on all materials</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span>Quick loading and dispatch</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span>Weather-protected storage</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span>Ready for wholesale orders</span></li>
+                </ul>
+
+                <div class="warehouse-stats">
+                    <div class="w-stat">
+                        <div class="w-icon"><i class="fas fa-building"></i></div>
+                        <div class="w-number">50,000+</div>
+                        <div class="w-label">Sq.ft Storage</div>
+                    </div>
+                    <div class="w-stat">
+                        <div class="w-icon"><i class="fas fa-box"></i></div>
+                        <div class="w-number">500+</div>
+                        <div class="w-label">Products</div>
+                    </div>
+                    <div class="w-stat">
+                        <div class="w-icon"><i class="fas fa-clock"></i></div>
+                        <div class="w-number">24/7</div>
+                        <div class="w-label">Available</div>
+                    </div>
+                </div>
+
+                <a href="#contact" class="btn btn-primary"><i class="fas fa-phone"></i> Request Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     WHY CHOOSE US SECTION
+     ============================================================================ -->
+<section class="section why-us" id="why-us">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Kishori Iron Store?</h2>
+            <p>Premium Service & Quality Guaranteed</p>
+            <div class="header-line"></div>
+        </div>
+
+        <div class="why-us-grid">
+            <div class="why-card">
+                <div class="why-icon"><i class="fas fa-tags"></i></div>
+                <h3>Best Price Guarantee</h3>
+                <p>Competitive wholesale rates for bulk orders. We beat any reasonable quote.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon"><i class="fas fa-warehouse"></i></div>
+                <h3>Large Stock Availability</h3>
+                <p>Fully stocked warehouse ensures immediate availability year-round.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon"><i class="fas fa-shipping-fast"></i></div>
+                <h3>Fast Local Delivery</h3>
+                <p>Quick dispatch and reliable delivery within Dhanushadham and nearby areas.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon"><i class="fas fa-certificate"></i></div>
+                <h3>Quality Certified</h3>
+                <p>All products certified by industry standards. 100% quality assurance.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon"><i class="fas fa-handshake"></i></div>
+                <h3>Expert Support</h3>
+                <p>Knowledgeable team for selection, specifications, and technical guidance.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon"><i class="fas fa-heart"></i></div>
+                <h3>Customer First</h3>
+                <p>Trusted by 500+ customers with 100% satisfaction guarantee.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     TESTIMONIALS SECTION
+     ============================================================================ -->
+<section class="section testimonials" id="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <h2>Customer Testimonials</h2>
+            <p>What Our Satisfied Customers Say About Us</p>
+            <div class="header-line"></div>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Kishori Iron Store is my go-to supplier. Excellent quality, honest pricing, and reliable delivery. Highly recommended!"</p>
+                <div class="testimonial-author">
+                    <strong>Rajesh Kumar</strong>
+                    <span>Contractor, Dhanushadham</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Best prices in town with no compromise on quality. Their staff is knowledgeable and helpful. Loyal customer for 5 years!"</p>
+                <div class="testimonial-author">
+                    <strong>Priya Sharma</strong>
+                    <span>Building Developer</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"For our large housing project, reliable bulk supply with on-time delivery and consistent quality. Perfect partnership!"</p>
+                <div class="testimonial-author">
+                    <strong>Vikram Singh</strong>
+                    <span>Construction Engineer</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Exceptional service and quick response. They understand construction needs perfectly. Highly recommend!"</p>
+                <div class="testimonial-author">
+                    <strong>Anil Patel</strong>
+                    <span>Building Contractor</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     CONTACT SECTION
+     ============================================================================ -->
+<section class="section contact" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2>Get in Touch</h2>
+            <p>We're Here to Help with Your Construction Needs</p>
+            <div class="header-line"></div>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+
+                <div class="info-box">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-text">
+                        <h4>Visit Us</h4>
+                        <p>Kishori Iron Store<br>Dhanushadham<br>Building Materials Warehouse</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon"><i class="fas fa-phone"></i></div>
+                    <div class="info-text">
+                        <h4>Call Us</h4>
+                        <a href="tel:+919876543210">+91 98765 43210</a>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="info-text">
+                        <h4>Email Us</h4>
+                        <a href="mailto:info@kishoriironstore.com">info@kishoriironstore.com</a>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="info-text">
+                        <h4>WhatsApp Chat</h4>
+                        <a href="https://wa.me/919876543210" target="_blank">Chat Now</a>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon"><i class="fas fa-clock"></i></div>
+                    <div class="info-text">
+                        <h4>Business Hours</h4>
+                        <p>Mon-Sat: 9:00 AM - 7:00 PM<br>Sun: 10:00 AM - 5:00 PM<br>24/7 Emergency</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://wa.me/919876543210" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="submitContactForm(event)">
+                <h3>Send Us a Message</h3>
+                <input type="text" placeholder="Your Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="text" placeholder="Subject" required>
+                <textarea placeholder="Your Message..." rows="5" required></textarea>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send</button>
             </form>
         </div>
     </div>
+</section>
 
-    <!-- BACK TO TOP -->
-    <button class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+<!-- ============================================================================
+     FOOTER
+     ============================================================================ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Kishori Iron Store</h4>
+                <p>Premium hardware with transparent pricing and quality assurance. Trusted by 500+ customers in Dhanushadham.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://wa.me/919876543210"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
 
-    <script src="script.js"></script>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#products">Products</a>
+                <a href="#warehouse">Warehouse</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Products</h4>
+                <a href="#products">Cement</a>
+                <a href="#products">Steel & Rod</a>
+                <a href="#products">Sand & Aggregates</a>
+                <a href="#products">Bricks</a>
+                <a href="#products">Plumbing</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 98765 43210</a>
+                <a href="mailto:info@kishoriironstore.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://wa.me/919876543210"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Dhanushadham</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kishori Iron Store. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ============================================================================
+     MODALS
+     ============================================================================ -->
+<!-- Quick View Modal -->
+<div id="quickViewModal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeQuickView()">×</button>
+        <div id="quickViewBody"></div>
+    </div>
+</div>
+
+<!-- Inquiry Modal -->
+<div id="inquiryModal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeInquiry()">×</button>
+        <h2>Product Inquiry</h2>
+        <form id="inquiryForm" onsubmit="submitInquiry(event)">
+            <input type="text" id="inquiryProduct" readonly>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone" required>
+            <input type="number" placeholder="Quantity" min="1" required>
+            <textarea placeholder="Message" rows="4" required></textarea>
+            <button type="submit" class="btn btn-primary">Send via WhatsApp</button>
+        </form>
+    </div>
+</div>
+
+<!-- Back to Top -->
+<button id="backToTop" class="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="script.js"></script>
 </body>
 </html>
