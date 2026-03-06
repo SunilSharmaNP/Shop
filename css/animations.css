@@ -3,59 +3,426 @@
    Smooth, Professional User Experience
    ============================================ */
 
-/* ===== FADE ANIMATIONS ===== */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 /* ===== SCALE ANIMATIONS ===== */
-@key
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+/* ===== BOUNCE ANIMATIONS ===== */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== PULSE ANIMATIONS ===== */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 196, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 196, 0, 0.8);
+    }
+}
+
+/* ===== SHIMMER LOADING ===== */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.loading {
+    animation: shimmer 2s infinite;
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 25%,
+        #e0e0e0 50%,
+        #f0f0f0 75%
+    );
+    background-size: 1000px 100%;
+}
+
+/* ===== ROTATION ANIMATIONS ===== */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinSlow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+.spin-slow {
+    animation: spinSlow 3s linear infinite;
+}
+
+/* ===== HOVER ANIMATIONS ===== */
+.lift-on-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.scale-on-hover:hover {
+    transform: scale(1.05);
+}
+
+.glow-on-hover:hover {
+    box-shadow: 0 0 15px rgba(255, 196, 0, 0.5);
+}
+
+/* ===== BUTTON ANIMATIONS ===== */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ===== LINK ANIMATIONS ===== */
+a {
+    position: relative;
+}
+
+a:not(.btn)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+a:not(.btn):hover::after {
+    width: 100%;
+}
+
+/* ===== CARD ANIMATIONS ===== */
+.product-card,
+.value-card,
+.testimonial-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+.product-card:nth-child(4) { animation-delay: 0.4s; }
+.product-card:nth-child(n+5) { animation-delay: 0.5s; }
+
+/* ===== COLLECTION CARD HOVER ===== */
+.collection-card {
+    transition: all 0.3s ease;
+}
+
+.collection-card:hover {
+    transform: translateY(-8px);
+}
+
+.collection-card:hover .collection-image {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.collection-image img {
+    transition: transform 0.4s ease;
+}
+
+.collection-card:hover .collection-image img {
+    transform: scale(1.1) rotate(1deg);
+}
+
+/* ===== HERO SECTION ANIMATIONS ===== */
+.hero-headline {
+    animation: slideDown 0.8s ease-out;
+}
+
+.hero-subtext {
+    animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.hero-ctas {
+    animation: slideUp 0.8s ease-out 0.4s both;
+}
+
+/* ===== BADGE ANIMATIONS ===== */
+.product-badge {
+    animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ===== FORM ANIMATIONS ===== */
+.form-group {
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.form-group:nth-child(1) { animation-delay: 0s; }
+.form-group:nth-child(2) { animation-delay: 0.1s; }
+.form-group:nth-child(3) { animation-delay: 0.2s; }
+.form-group:nth-child(4) { animation-delay: 0.3s; }
+.form-group:nth-child(5) { animation-delay: 0.4s; }
+
+.form-group input:focus,
+.form-group textarea:focus {
+    animation: glow 0.3s ease-out;
+}
+
+/* ===== MODAL ANIMATIONS ===== */
+.modal.active {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal.active .modal-content {
+    animation: slideUp 0.4s ease-out;
+}
+
+/* ===== SUCCESS/ERROR MESSAGES ===== */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.message {
+    animation: slideInDown 0.4s ease-out;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ===== CHECKBOX & RADIO ANIMATIONS ===== */
+input[type="checkbox"],
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    animation: scaleIn 0.3s ease-out;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== PARALLAX EFFECT ===== */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ===== GRADIENT ANIMATIONS ===== */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-animate {
+    background-size: 200% 200%;
+    animation: gradientShift 6s ease infinite;
+}
+
+/* ===== SKELETON LOADER ===== */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 25%,
+        #e0e0e0 50%,
+        #f0f0f0 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* ===== TOOLTIP ANIMATIONS ===== */
+.tooltip {
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== STAGGER ANIMATIONS FOR LISTS ===== */
+.stagger-list li {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.stagger-list li:nth-child(1) { animation-delay: 0.1s; }
+.stagger-list li:nth-child(2) { animation-delay: 0.2s; }
+.stagger-list li:nth-child(3) { animation-delay: 0.3s; }
+.stagger-list li:nth-child(4) { animation-delay: 0.4s; }
+.stagger-list li:nth-child(n+5) { animation-delay: 0.5s; }
+
+/* ===== INFINITE ANIMATIONS ===== */
+.infinite-bounce {
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.infinite-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.infinite-glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* ===== TRANSITION UTILITIES ===== */
+.transition-fast {
+    transition: all 150ms ease-in-out;
+}
+
+.transition-base {
+    transition: all 250ms ease-in-out;
+}
+
+.transition-slow {
+    transition: all 350ms ease-in-out;
+}
+
+/* ===== ACCESSIBILITY - REMOVE ANIMATIONS FOR USERS WHO PREFER REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
