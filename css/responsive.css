@@ -49,21 +49,43 @@
         display: flex;
     }
 
-    /* Mobile Menu */
+    /* Mobile Menu - slide-in off-canvas */
     .main-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
+        display: flex;
+        position: fixed;
+        top: 0;
         left: 0;
-        right: 0;
+        height: 100vh;
+        width: 280px;
+        max-width: 85%;
         background: var(--color-white);
-        border-bottom: 1px solid #e5e7eb;
+        box-shadow: 4px 0 24px rgba(0,0,0,0.12);
+        transform: translateX(-110%);
+        transition: transform 320ms var(--transition-base);
+        z-index: 999;
         flex-direction: column;
-        width: 100%;
+        padding-top: 100px; /* leave space for header */
     }
 
+    /* When active, slide into view */
     .main-nav.active {
-        display: flex;
+        transform: translateX(0);
+    }
+
+    /* Overlay behind menu when open */
+    .main-nav-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.35);
+        z-index: 950;
+        opacity: 0;
+        transition: opacity 220ms ease-in-out;
+    }
+
+    .main-nav-overlay.active {
+        display: block;
+        opacity: 1;
     }
 
     .nav-menu {
@@ -656,3 +678,4 @@
         color: #888;
     }
 }
+
