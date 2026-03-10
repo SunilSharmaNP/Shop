@@ -98,6 +98,122 @@
             display: block;
         }
 
+        /* Hero slider styles */
+        .about-hero-slider {
+            position: relative;
+            height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .about-hero-slider .hero-slides {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 600ms ease;
+            will-change: opacity;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .about-hero-slider .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26,45,90,0.6) 0%, rgba(26,45,90,0.6) 100%);
+            z-index: 1;
+        }
+
+        .hero-slide-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            padding: 2rem 1rem;
+            text-align: left;
+            color: #fff;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            line-height: 1.05;
+            margin-bottom: 0.6rem;
+            font-weight: 800;
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .hero-controls {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .hero-controls button {
+            background: rgba(255,255,255,0.12);
+            border: none;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .hero-dots {
+            position: absolute;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            gap: 8px;
+        }
+
+        .hero-dots button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,0.45);
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .hero-dots button.active {
+            background: var(--color-accent);
+            width: 12px;
+            height: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero-slider { height: 360px; }
+            .hero-title { font-size: 2rem; }
+            .hero-sub { font-size: 0.95rem; }
+            .hero-slide-content { text-align: center; }
+        }
+
         .timeline {
             position: relative;
             padding: 40px 0;
@@ -394,13 +510,32 @@
 
     <main id="main-content">
         
-        <!-- Hero Section -->
-        <div class="about-hero">
-            <div class="container">
-                <h1>About Kishori Iron Store</h1>
-                <p>15+ Years of Trusted Service to Builders, Contractors, and Homeowners</p>
+        <!-- Hero Slider Section -->
+        <section class="about-hero-slider">
+            <div class="hero-slides">
+                <div class="hero-slide active" data-title="About Kishori Iron Store" data-sub="15+ Years of Trusted Service to Builders, Contractors, and Homeowners">
+                    <img src="../aassets/images/hero-warehouse.jpg" alt="warehouse" onerror="this.onerror=null;this.src='https://source.unsplash.com/1600x900/?warehouse,construction'">
+                </div>
+                <div class="hero-slide" data-title="Quality Materials" data-sub="ISO & ISI certified products for reliable construction">
+                    <img src="../aassets/images/categories/cement.jpg" alt="materials" onerror="this.onerror=null;this.src='https://source.unsplash.com/1600x900/?building-materials,cement'">
+                </div>
+                <div class="hero-slide" data-title="Fast Delivery" data-sub="Prompt dispatch and reliable logistics for large orders">
+                    <img src="../aassets/images/about/company-story.jpg" alt="delivery" onerror="this.onerror=null;this.src='https://source.unsplash.com/1600x900/?delivery,truck'">
+                </div>
             </div>
-        </div>
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-slide-content">
+                <h1 class="hero-title">About Kishori Iron Store</h1>
+                <p class="hero-sub">15+ Years of Trusted Service to Builders, Contractors, and Homeowners</p>
+                <div class="hero-controls">
+                    <button class="hero-prev" aria-label="Previous slide">‹</button>
+                    <button class="hero-next" aria-label="Next slide">›</button>
+                </div>
+            </div>
+            <div class="hero-dots" aria-hidden="false"></div>
+        </section>
 
         <!-- About Section -->
         <div class="container">
@@ -445,7 +580,7 @@
                     </div>
 
                     <div class="about-image">
-                        <img src="../assets/images/about/company-story.jpg" alt="Kishori Iron Store warehouse facility" loading="lazy">
+                        <img src="../aassets/images/about/company-story.jpg" alt="Kishori Iron Store warehouse facility" loading="lazy">
                     </div>
                 </div>
 
@@ -608,7 +743,7 @@
                 <div class="team-grid">
                     <div class="team-card">
                         <div class="team-avatar">
-                            <img src="../assets/images/team/rajesh-sharma.jpg" alt="Rajesh Sharma" loading="lazy">
+                            <img src="../aassets/images/team/rajesh-sharma.jpg" alt="Rajesh Sharma" loading="lazy">
                         </div>
                         <h4>Rajesh Sharma</h4>
                         <div class="team-role">Founder & Managing Director</div>
@@ -617,7 +752,7 @@
 
                     <div class="team-card">
                         <div class="team-avatar">
-                            <img src="../assets/images/team/priya-sharma.jpg" alt="Priya Sharma" loading="lazy">
+                            <img src="../aassets/images/team/priya-sharma.jpg" alt="Priya Sharma" loading="lazy">
                         </div>
                         <h4>Priya Sharma</h4>
                         <div class="team-role">Operations Manager</div>
@@ -626,7 +761,7 @@
 
                     <div class="team-card">
                         <div class="team-avatar">
-                            <img src="../assets/images/team/vikram-patil.jpg" alt="Vikram Patil" loading="lazy">
+                            <img src="../aassets/images/team/vikram-patil.jpg" alt="Vikram Patil" loading="lazy">
                         </div>
                         <h4>Vikram Patil</h4>
                         <div class="team-role">Sales & Customer Relations</div>
@@ -635,7 +770,7 @@
 
                     <div class="team-card">
                         <div class="team-avatar">
-                            <img src="../assets/images/team/anita-desai.jpg" alt="Anita Desai" loading="lazy">
+                            <img src="../aassets/images/team/anita-desai.jpg" alt="Anita Desai" loading="lazy">
                         </div>
                         <h4>Anita Desai</h4>
                         <div class="team-role">Quality Assurance Head</div>
@@ -658,6 +793,88 @@
         </div>
 
     </main>
+
+    <div class="main-nav-overlay" id="mainNavOverlay"></div>
+
+    <script>
+        // Hero slider for About page
+        (function(){
+            const slider = document.querySelector('.about-hero-slider');
+            if (!slider) return;
+
+            const slides = Array.from(slider.querySelectorAll('.hero-slide'));
+            const titleEl = slider.querySelector('.hero-title');
+            const subEl = slider.querySelector('.hero-sub');
+            const prevBtn = slider.querySelector('.hero-prev');
+            const nextBtn = slider.querySelector('.hero-next');
+            const dotsContainer = slider.querySelector('.hero-dots');
+
+            let current = slides.findIndex(s => s.classList.contains('active')) || 0;
+            let timer = null;
+
+            function showSlide(index) {
+                slides.forEach((s,i) => {
+                    s.classList.toggle('active', i === index);
+                });
+                const active = slides[index];
+                titleEl.textContent = active.dataset.title || '';
+                subEl.textContent = active.dataset.sub || '';
+                dotsContainer.querySelectorAll('button').forEach((b,i)=> b.classList.toggle('active', i===index));
+                current = index;
+            }
+
+            function next() { showSlide((current+1) % slides.length); }
+            function prev() { showSlide((current-1+slides.length) % slides.length); }
+
+            // build dots
+            slides.forEach((s, i) => {
+                const btn = document.createElement('button');
+                btn.className = i===current ? 'active' : '';
+                btn.setAttribute('aria-label', 'Go to slide '+(i+1));
+                btn.addEventListener('click', () => { showSlide(i); reset(); });
+                dotsContainer.appendChild(btn);
+            });
+
+            nextBtn.addEventListener('click', () => { next(); reset(); });
+            prevBtn.addEventListener('click', () => { prev(); reset(); });
+
+            function start() { timer = setInterval(next, 5000); }
+            function stop() { clearInterval(timer); }
+            function reset() { stop(); start(); }
+
+            // touch support
+            let startX = 0;
+            slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; stop(); });
+            slider.addEventListener('touchend', e => { const endX = e.changedTouches[0].clientX; if (startX - endX > 40) next(); if (endX - startX > 40) prev(); start(); });
+
+            // init
+            showSlide(current);
+            start();
+        })();
+
+        // Overlay toggle for slide-in nav
+        (function(){
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('.main-nav');
+            const overlay = document.getElementById('mainNavOverlay');
+
+            if (!mobileToggle || !nav || !overlay) return;
+
+            mobileToggle.addEventListener('click', () => {
+                const open = mobileToggle.classList.toggle('active');
+                nav.classList.toggle('active', open);
+                overlay.classList.toggle('active', open);
+                mobileToggle.setAttribute('aria-expanded', open);
+            });
+
+            overlay.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                nav.classList.remove('active');
+                overlay.classList.remove('active');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+            });
+        })();
+    </script>
 
     <!-- Footer -->
     <footer class="main-footer" role="contentinfo">
